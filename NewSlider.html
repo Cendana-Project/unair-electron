@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css " rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Rektor Universitas Airlangga</title>
+  <style>
+    body,
+    h1 {
+      font-family: 'DM Serif Text', serif;
+    }
+
+    p {
+      font-family: "Space Grotesk", serif;
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 64px !important;
+      padding-top: 64px !important;
+      -webkit-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+      position: relative;
+    }
+
+    .swiper-slide {
+      opacity: 0.5;
+      transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    }
+
+    .swiper-slide-active {
+      transform: scale(1.25);
+      transition: transform 300ms ease-in-out;
+      opacity: 1;
+      color: '#00426B';
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-[#00426B] overflow-hidden">
+  <div class="flex flex-col justify-center items-center mt-10 mb-8">
+    <img src="Logo Kampus.png" alt="Logo Kampus Unair" class="w-24 h-auto">
+    <h1 class="mt-3 text-white text-5xl">Rektor Universitas Airlangga</h1>
+  </div>
+  <div class="w-full relative">
+    <div class="swiper-button-prev ml-16">
+      <img src="left.svg" alt="Prev">
+    </div>
+    <div class="swiper multiple-slide-carousel mx-32 swiper-container overflow-visible">
+      <div class="swiper-wrapper mb-16 "></div>
+    </div>
+    <div class="swiper-button-next ml-0 mr-16">
+      <img src="right.svg" alt="Next">
+    </div>
+  </div>
+
+
+  <footer class="w-full absolute bottom-0">
+    <img src="waves.svg" alt="waves image" class="w-full">
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module">
+    import sanityClient from "https://cdn.jsdelivr.net/npm/@sanity/client/+esm";
+
+    document.addEventListener("DOMContentLoaded", async function() {
+
+      // ini bisa dijadiin satu file config client
+      try {
+        const client = sanityClient({
+          projectId: 'bwgbs60a',
+          dataset: 'production',
+          apiVersion: '2023-01-01',
+          useCdn: true,
+        });
+
+
+        // fetching dari sini
+        const rektorData = await client.fetch(`
+                    *[_type == "rektor"][0]{
+                        profilRektor[]->{
+                            _id,
+                            nama,
+                            fotoProfil{
+                                asset->{
+                                    url
+                                }
+                            },
+                            deskripsiProfil,
+                            masaJabatan
+                        }
+                    }
+                `);
+
+        const swiperContainer = document.querySelector('.swiper-wrapper');
+        swiperContainer.innerHTML = '';
+
+        console.log(rektorData)
+
+        //  looping hasil fetching
+        if (rektorData && rektorData.profilRektor) {
+          rektorData.profilRektor.forEach((item, index) => {
+            let slide = document.createElement('div');
+            if (index === 0) {
+              slide.className = 'swiper-slide transition duration-300 max-w-xs border-2 border-gray-200 rounded-3xl shadow ml-10';
+            } else {
+              slide.className = 'swiper-slide transition duration-300 max-w-xs border-2 border-gray-200 rounded-3xl shadow';
+            }
+            const imageUrl = item?.fotoProfil?.asset?.url || '/assets/default-image.png';
+            const nama = item?.nama || 'Tidak Ada Nama';
+            const masaJabatan = item?.masaJabatan || 'Tidak Ada Masa Jabatan';
+            const pendidikanTerakhir = item?.pendidikanTerakhir || 'Tidak Ada Pendidikan';
+            const deskripsiProfil = item?.deskripsiProfil || 'Tidak Ada Deskripsi';
+            const indexs = index + 1;
+
+            slide.innerHTML = `
+                            <div class="relative">
+                                <img class="rounded-t-3xl bg-[#FFE600] w-[20rem] h-[19rem] border border-white border-b-4 object-cover" src="${imageUrl}" alt="${nama}" />
+                                <span class="absolute bottom-0 left-5 mb-3 font-normal text-7xl text-center text-white dark:text-gray-400">${indexs}</span>
+                            </div>                        
+
+                            <div class="mx-5 mb-5">
+                                <h5 class="mb-2 my-3 text-2xl tracking-tight text-white dark:text-white text-center">${nama}</h5>
+                                <p class=" text-white mt-5 font-light text-center">em ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                <p class="text-xl mt-3 text-white font-normal text-center">(${masaJabatan})</p>
+                            </div>
+                        `;
+            swiperContainer.appendChild(slide);
+          });
+          // <!-- <p class="text-sm text-gray-600">${deskripsiProfil}</p>
+          const swiper = new Swiper('.multiple-slide-carousel', {
+            loop: true,
+            slidesPerView: 4,
+            pagination: true,
+            spaceBetween: 100,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            on: {
+              init: function() {
+                updateScaleEffect(this);
+              },
+              slideChange: function() {
+                updateScaleEffect(this);
+              }
+            },
+          });
+
+          function updateScaleEffect(swiper) {
+            swiper.slides.forEach((slide) => {
+              slide.style.transform = 'scale(1)';
+              slide.style.opacity = '0.5';
+              const spanElements = slide.querySelectorAll('span');
+              spanElements.forEach(element => {
+                element.style.color = '#FFFFFF';
+              });
+            });
+
+            const activeSlide = swiper.slides[swiper.activeIndex + 1];
+            if (activeSlide) {
+              activeSlide.style.transform = 'scale(1.25)';
+              activeSlide.style.opacity = '1';
+              const textElements = activeSlide.querySelectorAll('span');
+              textElements.forEach(element => {
+                element.style.color = '#00426B';
+              });
+            }
+          }
+        } else {
+          console.error('Tidak ada data profil rektor yang ditemukan.');
+        }
+      } catch (error) {
+        console.error('Error fetching data from Sanity:', error);
+      }
+    });
+  </script>
+</body>
+
+</html>

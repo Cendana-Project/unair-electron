@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css " rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <title>Profil Rektor</title>
+  <style>
+    body,
+    h1 {
+      font-family: 'DM Serif Text', serif;
+    }
+
+    /* p {
+      font-family: "Space Grotesk", serif;
+    } */
+
+    .font-inter {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+      /* Hide scrollbar in Chrome, Safari, and Opera */
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      /* Hide scrollbar in Internet Explorer and Edge */
+      scrollbar-width: none;
+      /* Hide scrollbar in Firefox */
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+      /* height: max-content !important; */
+      padding-bottom: 64px !important;
+      -webkit-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+      position: relative;
+    }
+
+    .swiper-pagination-bullet {
+      background: #4f46e5;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-[#00426B] flex flex-col min-h-screen m-0 overflow-hidden">
+  <header class="flex items-center mx-16 mt-10 header">
+    <div class="flex items-center header-title grow">
+      <div class="flex-none header-title-text w-max">
+        <h1 class="text-white text-[2.5rem]">Rektor Universitas Airlangga</h1>
+      </div>
+      <div class="mx-10 origin-right header-title-hr grow">
+        <hr class="border-t-2">
+      </div>
+    </div>
+    <div class="flex items-start absolute right-[70px] scale-90 top-8">
+      <img src="Logo Kampus.png" class="h-[110px] w-[110px]" alt="Logo Kampus Unair">
+    </div>
+    <div class="flex items-start opacity-0 right-[70px] scale-90">
+      <img src="Logo Kampus.png" class="h-[110px] w-[110px]" alt="Logo Kampus Unair">
+    </div>
+  </header>
+  <main class="grid grid-flow-row-dense grid-cols-3 grid-rows-3 ">
+    <div>
+      <div class="mx-16">
+        <div class="photo w-[270px] h-[440px] rounded-[2rem] bg-[#FFE600] border-white border-2 overflow-hidden flex items-end">
+          <img class="object-contain ml-auto photo-inner" src="iamge.png" alt="" />
+        </div>
+        <!-- <a href="#">
+        </a> -->
+      </div>
+      <div class="mt-8 mr-20 border-y ml-14 photo-desc ">
+        <h2 class="my-5 text-3xl text-white name">Prof. Dr. Mohammad Nasih, S.E., M.T., AK.,</h2>
+        <p class="mt-8 mb-5 text-3xl text-white year">(2020-2025)</p>
+      </div>
+    </div>
+    <div class="box-container col-span-2  mr-[13rem] ml-24 mb-[11rem] z-40">
+      <div class="grid w-full h-full grid-cols-2 grid-rows-2 gap-12">
+        <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+          <img class="z-10 w-16 mb-5" src="./images/profil.svg" alt="">
+          <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+          <p class="text-3xl tracking-wider text-white">PROFIL</p>
+        </div>
+        <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+          <img class="w-16 mb-5 " src="./images/galeri.svg" alt="">
+          <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+          <p class="text-3xl tracking-wider text-white">GALERI</p>
+        </div>
+        <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+          <img class="w-16 mb-5 " src="./images/orasi.svg" alt="">
+          <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+          <p class="text-3xl tracking-wider text-white">ORASI</p>
+        </div>
+        <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+          <img class="w-16 mb-5 " src="./images/struktur-bagan.svg" alt="">
+          <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+          <p class="text-3xl tracking-wider text-white">STRUKTUR</p>
+          <p class="text-3xl tracking-wider text-white">BAGAN</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="">
+    </div> -->
+
+  </main>
+  <h1 class="detail-title-profil absolute -top-[160px] right-[640px] text-5xl text-white">Profil</h1>
+
+  <h1 class="detail-title-galeri absolute left-[-160px] top-[65px] text-5xl text-white">Galeri</h1>
+
+  <h1 class="detail-title-orasi absolute left-[-160px] top-[65px] text-5xl text-white">Orasi</h1>
+
+  <h1 class="detail-title-struktur-bagan absolute left-[-350px] top-[65px] text-5xl text-white">Struktur Bagan</h1>
+
+  <div class="profil-description flex absolute top-[370px] left-[1565px] w-[520px] text-white h-[400px] font-inter">
+    <div class="space-y-4 overflow-y-scroll scrollbar-hide">
+      <p>
+        <span class="font-semibold tracking-wider">PENDIDIKAN TERAKHIR : </span>
+        S3 Ilmu Akuntansi Universitas Airlangga
+      </p>
+      <p>
+        <span class="font-semibold tracking-wider">EMAIL : </span>
+        mohnasih@feb.unair.ac.id
+      </p>
+      <p>
+        <span class="font-semibold tracking-wider">KANTOR : </span>
+        Kantor Manajemen Universitas Airlangga
+      </p>
+      <p>
+        <b>PROFIL</b>
+      </p>
+      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aspernatur nesciunt quas? Obcaecati at neque minus velit dolores assumenda doloremque blanditiis illo, autem quasi accusantium soluta, facere dignissimos aliquid reprehenderit. Cupiditate, aperiam. Non, quod maxime quae impedit illum aut. Ipsam animi magnam laborum assumenda sit. Veritatis enim omnis beatae nostrum.</p>
+      <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aspernatur nesciunt quas? Obcaecati at neque minus velit dolores assumenda doloremque blanditiis illo, autem quasi accusantium soluta, facere dignissimos aliquid reprehenderit. Cupiditate, aperiam. Non, quod maxime quae impedit illum aut. Ipsam animi magnam laborum assumenda sit. Veritatis enim omnis beatae nostrum.</p>
+    </div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="container-galeri absolute top-[160px] left-[1600px] w-[870px] px-20 overflow-hidden">
+    <!--HTML CODE-->
+    <div class="swiper-button-prev -translate-y-11">
+      <img class="scale-90 opacity-60" src="prev-no-circle.svg" alt="Prev">
+    </div>
+    <div class="relative w-full h-full">
+      <div class="swiper default-carousel swiper-container">
+        <div class="text-white underline swiper-wrapper font-inter underline-offset-4 decoration-1">
+          <!-- slide 1 -->
+          <div class="swiper-slide">
+            <div class="grid w-full h-full grid-cols-3 grid-rows-3 gap-x-12 gap-y-8">
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+            </div>
+          </div>
+          <!-- slide 1 -->
+          <div class="swiper-slide ">
+            <div class="grid w-full h-full grid-cols-3 grid-rows-3 gap-x-12 gap-y-8">
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+              <div class="flex-col items-center">
+                <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- <div class="swiper-slide">
+            <div class="flex items-center justify-center bg-indigo-50 rounded-2xl h-96">
+              <span class="text-3xl font-semibold text-indigo-600">Slide 2 </span>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="flex items-center justify-center bg-indigo-50 rounded-2xl h-96">
+              <span class="text-3xl font-semibold text-indigo-600">Slide 3 </span>
+            </div>
+          </div> -->
+      </div>
+
+    </div>
+    <div class="swiper-button-next -translate-y-11">
+      <img class="scale-75 scale-90 opacity-60" src="next-no-circle.svg" alt="Next">
+    </div>
+  </div>
+
+  <div class="container-orasi absolute top-[150px] left-[1560px] w-[880px] overflow-hidden">
+    <!--HTML CODE-->
+    <div class="translate-x-4 -translate-y-16 swiper-button-prev">
+      <img class="scale-90 opacity-60" src="prev-no-circle.svg" alt="Prev">
+    </div>
+    <div class="relative w-full h-full">
+      <div class="swiper default-carousel swiper-container bg-green">
+        <div class="text-white swiper-wrapper font-inter ">
+          <!-- slide 1 -->
+          <div class=" px-28 swiper-slide">
+            <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+              <div class="flex-col items-center ">
+                <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+
+            </div>
+          </div>
+          <!-- slide 1 -->
+          <div class="px-28 swiper-slide">
+            <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+              <div class="flex-col items-center ">
+                <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="-translate-x-4 -translate-y-16 swiper-button-next">
+      <img class="scale-90 opacity-60" src="next-no-circle.svg" alt="Next">
+    </div>
+  </div>
+
+  <div class="container-struktur-bagan absolute top-[150px] left-[1560px] w-[880px] overflow-hidden">
+    <!--HTML CODE-->
+    <div class="translate-x-4 -translate-y-16 swiper-button-prev">
+      <img class="scale-90 opacity-60" src="prev-no-circle.svg" alt="Prev">
+    </div>
+    <div class="relative w-full h-full">
+      <div class="swiper default-carousel swiper-container bg-green">
+        <div class="text-white swiper-wrapper font-inter ">
+          <!-- slide 1 -->
+          <div class=" px-28 swiper-slide">
+            <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+              <div class="flex-col items-center ">
+                <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+
+            </div>
+          </div>
+          <!-- slide 1 -->
+          <div class="px-28 swiper-slide">
+            <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+              <div class="flex-col items-center ">
+                <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+              <div class="flex-col items-center ">
+                <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="-translate-x-4 -translate-y-16 swiper-button-next">
+      <img class="scale-90 opacity-60" src="next-no-circle.svg" alt="Next">
+    </div>
+  </div>
+
+  <div class="back-button">
+    <img src="./images/back-icon.svg" alt="back icon" class="w-8 active:opacity-75 transition-all h-auto absolute bottom-[40px] right-[80px]">
+  </div>
+
+  <footer class="absolute bottom-0 w-full -z-20">
+    <img src="waves.svg" alt="waves image" class="w-full">
+  </footer>
+
+  <script>
+    let selectedDetailMenuIndex = null;
+
+
+    // Select all elements with the class 'box-wrapper'
+    const boxWrappers = document.querySelectorAll('.box-wrapper');
+    const boxContainer = document.querySelector('.box-container');
+    const headerTitle = document.querySelector('.header-title');
+    const headerTitleText = document.querySelector('.header-title-text');
+    const headerTitleHr = document.querySelector('.header-title-hr');
+
+    const photo = document.querySelector('.photo');
+    const photoInner = document.querySelector('.photo-inner');
+    const photoDesc = document.querySelector('.photo-desc');
+    const name = document.querySelector('.name');
+    const year = document.querySelector('.year');
+
+    const detailTitleProfil = document.querySelector('.detail-title-profil');
+    const detailTitleGaleri = document.querySelector('.detail-title-galeri');
+    const detailTitleOrasi = document.querySelector('.detail-title-orasi');
+    const detailTitleStrukturBagan = document.querySelector('.detail-title-struktur-bagan');
+
+    const profilDescription = document.querySelector('.profil-description');
+    const containerGaleri = document.querySelector('.container-galeri');
+    const containerOrasi = document.querySelector('.container-orasi');
+    const containerStrukturBagan = document.querySelector('.container-struktur-bagan');
+
+    const backButton = document.querySelector('.back-button');
+
+    const initialPhotoWidth = photo.clientWidth
+    const initialPhotoHeight = photo.clientHeight
+    const initialPhotoDescWidth = photoDesc.clientWidth
+    const initialNameWidth = name.clientWidth
+    const initialYearHeight = year.clientHeight
+
+    const initialHeaderHrWidth = headerTitleHr.clientWidth
+    const initialHeaderHrX = headerTitleHr.clientX
+
+    function initialSetter() {
+      gsap.set(boxContainer, {
+        y: window.innerHeight,
+        duration: 1.5,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitle, {
+        y: -150,
+        duration: 1.25,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(photo, {
+        y: -10,
+        x: 60,
+        duration: 1.5,
+        scale: 1.5,
+        height: 580,
+        width: 500,
+        borderTopRightRadius: 40, // Set the top-right border radius
+        borderBottomRightRadius: 40, // Set the bottom-right border radius
+        borderTopLeftRadius: 0, // Set the top-right border radius
+        borderBottomLeftRadius: 0, // Set the bottom-right border radius
+        border: 'transparent',
+      });
+
+      gsap.set(photoInner, {
+        scale: 1.25,
+        duration: 1.5,
+        // ease: "power1.inOut",
+        x: -40,
+        filter: "grayscale(80%)"
+      });
+
+      gsap.set(photoDesc, {
+        y: -580,
+        x: 730,
+        width: 680,
+        duration: 1.5,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(name, {
+        scale: 1.5,
+        duration: 1.5,
+        x: 120,
+        ease: "power1.inOut",
+        width: 470,
+        marginTop: 40,
+        //   border: '1px solid red',
+      });
+
+      gsap.set(year, {
+        opacity: 0,
+        height: 0,
+        duration: 1.5,
+        ease: "power1.inOut",
+      });
+
+      gsap.set(detailTitleProfil, {
+        top: 80,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power1.inOut",
+      });
+
+      gsap.set(profilDescription, {
+        x: -780,
+        duration: 1.5,
+        ease: "power1.inOut",
+      });
+
+    }
+
+    function initialSetterGaleri() {
+      gsap.set(boxContainer, {
+        y: window.innerHeight,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleText, {
+        y: -150,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleHr, {
+        width: 1100,
+        transformOrigin: 'right',
+        duration: 2,
+        x: -380
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(detailTitleGaleri, {
+        x: 230,
+        opacity: 1,
+        duration: 2,
+        ease: "power1.inOut",
+      });
+    }
+
+
+    function initialSetterOrasi() {
+      gsap.set(boxContainer, {
+        y: window.innerHeight,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleText, {
+        y: -150,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleHr, {
+        width: 1100,
+        transformOrigin: 'right',
+        duration: 2,
+        x: -380
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(detailTitleOrasi, {
+        x: 230,
+        opacity: 1,
+        duration: 2,
+        ease: "power1.inOut",
+      });
+
+      gsap.set(containerOrasi, {
+        x: -1100,
+        duration: 2,
+        ease: "power1.inOut",
+      });
+    }
+    // initialSetter();
+
+    // initialSetterGaleri()
+
+    // initialSetterOrasi();
+
+    // Add event listeners to each 'box-wrapper'
+    boxWrappers.forEach((box, index) => {
+      box.addEventListener('click', () => {
+
+        if (index === 0) {
+          selectedDetailMenuIndex = 0;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitle, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(photo, {
+            y: -10,
+            x: 60,
+            duration: 1,
+            scale: 1.5,
+            height: 580,
+            width: 500,
+            borderTopRightRadius: 40, // Set the top-right border radius
+            borderBottomRightRadius: 40, // Set the bottom-right border radius
+            borderTopLeftRadius: 0, // Set the top-right border radius
+            borderBottomLeftRadius: 0, // Set the bottom-right border radius
+            border: 'transparent',
+          });
+
+          gsap.to(photoInner, {
+            scale: 1.25,
+            duration: 1,
+            // ease: "power1.inOut",
+            x: -40,
+            filter: "grayscale(80%)"
+          });
+
+          gsap.to(photoDesc, {
+            y: -580,
+            x: 730,
+            width: 680,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(name, {
+            scale: 1.5,
+            duration: 1,
+            x: 120,
+            ease: "power1.inOut",
+            width: 470,
+            marginTop: 40,
+            //   border: '1px solid red',
+          });
+
+          gsap.to(year, {
+            opacity: 0,
+            height: 0,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleProfil, {
+            top: 80,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(profilDescription, {
+            x: -780,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        } else if (index === 1) {
+          selectedDetailMenuIndex = 1;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleText, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleHr, {
+            width: 1100,
+            transformOrigin: 'right',
+            duration: 1,
+            x: -380
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleGaleri, {
+            x: 230,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(containerGaleri, {
+            x: -1100,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        } else if (index === 2) {
+          selectedDetailMenuIndex = 2;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleText, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleHr, {
+            width: 1100,
+            transformOrigin: 'right',
+            duration: 1,
+            x: -380
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleOrasi, {
+            x: 230,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(containerOrasi, {
+            x: -1100,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        } else if (index === 3) {
+          selectedDetailMenuIndex = 3;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleText, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleHr, {
+            width: 900,
+            transformOrigin: 'right',
+            duration: 1,
+            x: -190
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleStrukturBagan, {
+            x: 410,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(containerStrukturBagan, {
+            x: -1100,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        }
+
+      });
+    });
+
+    backButton.addEventListener('click', () => {
+      if (selectedDetailMenuIndex === 0) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitle, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(photo, {
+          y: 0,
+          x: 0,
+          duration: 1,
+          scale: 1,
+          height: initialPhotoHeight,
+          width: initialPhotoWidth,
+          borderTopRightRadius: 40, // Set the top-right border radius
+          borderBottomRightRadius: 40, // Set the bottom-right border radius
+          borderTopLeftRadius: 40, // Set the top-right border radius
+          borderBottomLeftRadius: 40, // Set the bottom-right border radius
+
+        });
+
+        gsap.to(photoInner, {
+          scale: 1,
+          duration: 1,
+          // ease: "power1.inOut",
+          x: 0,
+          filter: "grayscale(0%)"
+        });
+
+        gsap.to(photoDesc, {
+          y: 0,
+          x: 0,
+          width: initialPhotoDescWidth,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(name, {
+          scale: 1,
+          duration: 1,
+          x: 0,
+          ease: "power1.inOut",
+          width: initialNameWidth,
+          marginTop: 20,
+        });
+
+        gsap.to(year, {
+          opacity: 1,
+          height: initialYearHeight,
+          duraHeight: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleProfil, {
+          top: -80,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(profilDescription, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+      } else if (selectedDetailMenuIndex === 1) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleText, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleHr, {
+          width: initialHeaderHrWidth,
+          duration: 1,
+          x: -20
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleGaleri, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(containerGaleri, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+      } else if (selectedDetailMenuIndex === 2) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleText, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleHr, {
+          width: initialHeaderHrWidth,
+          duration: 1,
+          x: -20
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleOrasi, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(containerOrasi, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+      } else if (selectedDetailMenuIndex === 3) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleText, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleHr, {
+          width: initialHeaderHrWidth,
+          duration: 1,
+          x: -20
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleStrukturBagan, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(containerStrukturBagan, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+      }
+
+    });
+
+    var swiper = new Swiper(".default-carousel", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css " rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <title>Profil Rektor</title>
+  <style>
+    body,
+    h1 {
+      font-family: 'DM Serif Text', serif;
+    }
+
+    /* p {
+      font-family: "Space Grotesk", serif;
+    } */
+
+    .font-inter {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+      /* Hide scrollbar in Chrome, Safari, and Opera */
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      /* Hide scrollbar in Internet Explorer and Edge */
+      scrollbar-width: none;
+      /* Hide scrollbar in Firefox */
+    }
+
+    /* 
+    .swiper-wrapper {
+      width: 100%;
+      padding-bottom: 64px !important;
+      -webkit-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+      position: relative;
+    } */
+
+    .swiper-pagination-bullet {
+      background: #4f46e5;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      display: none;
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 64px !important;
+      padding-top: 64px !important;
+      -webkit-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+      position: relative;
+    }
+
+    .swiper-slide {
+      /* opacity: 0.5; */
+      transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    }
+
+    .swiper-slide-active {
+      transform: scale(1.25);
+      transition: transform 300ms ease-in-out;
+      opacity: 1;
+      color: '#00426B';
+    }
+
+    .font-space-grotesk {
+      font-family: "Space Grotesk", serif;
+    }
+
+    body {
+      user-select: none;
+    }
+  </style>
+  <script>
+    document.addEventListener("gesturestart", function(event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener("gesturechange", function(event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener("gestureend", function(event) {
+      event.preventDefault();
+    });
+  </script>
+</head>
+
+<body class="bg-[#00426B] overflow-hidden relative" oncontextmenu="return false;">
+  <!-- PAGE SLIDER -->
+  <div class="relative min-h-screen slider-container">
+    <div class="absolute z-30 flex flex-col items-center justify-center w-full mt-10 mb-8 initial-header">
+      <img src="Logo Kampus.png" alt="Logo Kampus Unair" class="w-24 h-auto">
+      <h1 class="mt-3 text-5xl text-white">Rektor Universitas Airlangga</h1>
+    </div>
+    <div class="absolute z-30 w-full initial-slider">
+      <div class="relative ">
+        <div class="ml-16 swiper-button-prev">
+          <img src="left.svg" alt="Prev">
+        </div>
+        <div class="mx-32 swiper multiple-slide-carousel swiper-container">
+          <div class="mb-16 swiper-wrapper"></div>
+        </div>
+        <div class="ml-0 mr-16 swiper-button-next">
+          <img src="right.svg" alt="Next">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FROM PROFIL -->
+  <div class="absolute top-0 left-0 flex flex-col min-h-screen m-0 ">
+    <header class="flex items-center mx-16 mt-10 header">
+      <div class="flex items-center header-title grow">
+        <div class="flex-none invisible header-title-text w-max">
+          <h1 class="text-white text-[2.5rem]">Rektor Universitas Airlangga</h1>
+        </div>
+        <div class="mx-10 origin-right header-title-hr grow">
+          <hr class="border-t-2">
+        </div>
+      </div>
+      <!-- <div class="flex items-start absolute right-[70px] scale-90 top-8">
+        <img src="Logo Kampus.png" class="h-[110px] w-[110px]" alt="Logo Kampus Unair">
+      </div> -->
+      <div class="flex items-start opacity-0 right-[70px] scale-90">
+        <img src="Logo Kampus.png" class="h-[110px] w-[110px]" alt="Logo Kampus Unair">
+      </div>
+    </header>
+    <main class="flex w-screen">
+      <div>
+        <div class="mx-16">
+          <div class="photo w-[270px] h-[440px] rounded-[2rem] bg-[#FFE600] border-white border-[3px] overflow-hidden flex items-end">
+            <a href="#" id="openModal">
+              <img src="preview-img.svg" class="absolute z-10 right-5 bottom-5" alt="">
+            </a>
+            <img class="object-cover w-full h-full photo-inner" src="iamge.png" alt="" />
+          </div>
+        </div>
+        <div class="mt-8 border-y ml-14 photo-desc w-[360px]">
+          <h2 class="my-5 text-3xl text-white name">Prof. Dr. Mohammad Nasih, S.E., M.T., AK.,</h2>
+          <p class="mt-8 mb-5 text-3xl text-white year">(2020-2025)</p>
+        </div>
+      </div>
+      <div class="box-container ml-auto mr-[220px] w-[700px] mb-[140px] z-40">
+        <div class="grid w-full h-full grid-cols-2 grid-rows-2 gap-12">
+          <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+            <img class="z-10 w-16 mb-5" src="./images/profil.svg" alt="">
+            <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+            <p class="text-3xl tracking-wider text-white">PROFIL</p>
+          </div>
+          <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+            <img class="w-16 mb-5 " src="./images/galeri.svg" alt="">
+            <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+            <p class="text-3xl tracking-wider text-white">GALERI</p>
+          </div>
+          <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+            <img class="w-16 mb-5 " src="./images/orasi.svg" alt="">
+            <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+            <p class="text-3xl tracking-wider text-white">ORASI</p>
+          </div>
+          <div class="box-wrapper flex flex-col justify-center items-center bg-[#00548F]  shadow-[0_4px_16px_rgba(0,0,0,0.50)] rounded-2xl active:bg-[#00426B] transition-all">
+            <img class="w-16 mb-5 " src="./images/struktur-bagan.svg" alt="">
+            <span class="h-[1px] mb-3 bg-white/60 w-[160px]"></span>
+            <p class="text-3xl tracking-wider text-white">STRUKTUR</p>
+            <p class="text-3xl tracking-wider text-white">BAGAN</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <h1 class="detail-title-profil absolute -top-[160px] right-[640px] text-5xl text-white">Profil</h1>
+
+    <h1 class="detail-title-galeri absolute left-[-160px] top-[65px] text-5xl text-white">Galeri</h1>
+
+    <h1 class="detail-title-orasi absolute left-[-160px] top-[65px] text-5xl text-white">Orasi</h1>
+
+    <h1 class="detail-title-struktur-bagan absolute left-[-350px] top-[65px] text-5xl text-white">Struktur Bagan</h1>
+
+    <div class="profil-description flex absolute top-[370px] left-[1565px] w-[520px] text-white h-[400px] font-inter">
+      <div class="space-y-4 overflow-y-scroll scrollbar-hide w-max">
+        <p>
+          <span class="font-semibold tracking-wider">PENDIDIKAN TERAKHIR : </span>
+          <span class="pendidikan-terakhir">S3 Ilmu Akuntansi Universitas Airlangga</span>
+        </p>
+        <p>
+          <span class="font-semibold tracking-wider">EMAIL : </span>
+          <span class="email">mohnasih@feb.unair.ac.id</span>
+        </p>
+        <p>
+          <span class="font-semibold tracking-wider">KANTOR : </span>
+          <span class="kantor">Kantor Manajemen Universitas Airlangga</span>
+        </p>
+        <p>
+          <b>PROFIL</b>
+        </p>
+        <div class="mr-12">
+          <p class="text-justify deskripsi-profil">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aspernatur nesciunt quas? Obcaecati at neque minus velit dolores assumenda doloremque blanditiis illo, autem quasi accusantium soluta, facere dignissimos aliquid reprehenderit. Cupiditate, aperiam. Non, quod maxime quae impedit illum aut. Ipsam animi magnam laborum assumenda sit. Veritatis enim omnis beatae nostrum.</p>
+          <p class="hidden text-justify deskripsi-profil-eng">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aspernatur nesciunt quas? Obcaecati at neque minus velit dolores assumenda doloremque blanditiis illo, autem quasi accusantium soluta, facere dignissimos aliquid reprehenderit. Cupiditate, aperiam. Non, quod maxime quae impedit illum aut. Ipsam animi magnam laborum assumenda sit. Veritatis enim omnis beatae nostrum.</p>
+        </div>
+      </div>
+      <div class="absolute top-0 right-0 ">
+        <img src="scroll-icon.svg" class="mb-3 rotate-180 scroll-up" onclick="scrollUp()">
+        <img src="scroll-icon.svg" class="scroll-down" onclick="scrollDown()">
+      </div>
+      <div class="absolute top-0 right-[-5rem]">
+        <button id="btnEN" onclick="toggleLanguage('EN')">EN</button>
+        <span class="text-white"> | </span>
+        <button id="btnID" onclick="toggleLanguage('ID')">ID</button>
+      </div>
+    </div>
+
+    <div class="container-galeri absolute top-[100px] left-[1600px] w-[870px] px-20 overflow-hidden">
+      <!--HTML CODE-->
+      <div class="absolute top-[350px] left-[20px] z-40 swiper-button-prev-galeri">
+        <img class="scale-90 opacity-60" src="prev-no-circle.svg" alt="Prev">
+      </div>
+      <div class="relative w-full h-full">
+        <div class="swiper default-carousel default-carousel-galeri swiper-container">
+          <div class="text-white underline swiper-wrapper swiper-wrapper-galeri font-inter underline-offset-4 decoration-1">
+            <!-- <div class="swiper-slide">
+              <div class="grid w-full h-full grid-cols-3 grid-rows-3 gap-x-12 gap-y-8">
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-base font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="swiper-slide ">
+              <div class="grid w-full h-full grid-cols-3 grid-rows-3 gap-x-12 gap-y-8">
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+                <div class="flex-col items-center">
+                  <img class="mx-auto w-full h-[130px] object-cover border-4 border-white mb-2" src="./images/img-galeri.png" alt="">
+                  <p class="w-full text-sm font-light text-center">Kunjungan Lemhanas <br> Universitas Airlangga</p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next-galeri absolute top-[350px] right-[20px] z-40">
+        <img class="scale-90 opacity-60" src="next-no-circle.svg" alt="Next">
+      </div>
+    </div>
+
+    <div class="container-orasi absolute top-[100px] left-[1560px] w-[880px] overflow-hidden">
+      <!--HTML CODE-->
+      <div class="relative w-full h-full">
+        <div class="absolute z-40 top-[250px] left-0 swiper-button-prev-orasi">
+          <img class="scale-90 opacity-60" src="prev-no-circle.svg" alt="Prev">
+        </div>
+        <div class="swiper default-carousel default-carousel-orasi swiper-container bg-green">
+          <div class="text-white swiper-wrapper swiper-wrapper-orasi font-inter ">
+            <!-- slide 1 -->
+            <div class=" px-28 swiper-slide">
+              <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+                <div class="flex-col items-center ">
+                  <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+
+              </div>
+            </div>
+            <!-- slide 1 -->
+            <div class="px-28 swiper-slide">
+              <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+                <div class="flex-col items-center ">
+                  <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next-orasi absolute z-40 top-[250px] right-0">
+        <img class="scale-90 opacity-60" src="next-no-circle.svg" alt="Next">
+      </div>
+    </div>
+
+    <div class="container-struktur-bagan absolute top-[100px] left-[1560px] w-[880px] overflow-hidden ">
+      <!--HTML CODE-->
+      <div class="translate-x-4 -translate-y-16 swiper-button-prev">
+        <img class="scale-90 opacity-60" src="prev-no-circle.svg" alt="Prev">
+      </div>
+      <div class="relative w-full h-full">
+        <div class="swiper default-carousel default-carousel-struktur-bagan swiper-container bg-green">
+          <div class="text-white swiper-wrapper swiper-wrapper-struktur-bagan font-inter ">
+            <!-- slide 1 -->
+            <div class=" px-28 swiper-slide">
+              <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+                <div class="flex-col items-center ">
+                  <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+
+              </div>
+            </div>
+            <!-- slide 1 -->
+            <div class="px-28 swiper-slide">
+              <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">
+                <div class="flex-col items-center ">
+                  <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+                <div class="flex-col items-center ">
+                  <img class="object-cover  mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="">
+                  <p class=" mx-auto text-base font-light text-center w-[90%]">Orasi UNAIR 22 September 2020 <br>.pdf</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="-translate-x-4 -translate-y-16 swiper-button-next">
+        <img class="scale-90 opacity-60" src="next-no-circle.svg" alt="Next">
+      </div>
+    </div>
+  </div>
+
+  <div class="opacity-0 back-button">
+    <img src="./images/back-icon.svg" alt="back icon" class="w-8 active:opacity-75 transition-all h-auto absolute bottom-[40px] right-[80px]">
+  </div>
+
+  <footer class="absolute bottom-0 w-full -z-10">
+    <img src="waves.svg" alt="waves image" class="w-full">
+  </footer>
+
+  <!-- MODAL SLIDER GALERI -->
+  <div class="z-50 absolute hidden top-0 items-center justify-center w-screen h-screen bg-[#231F20]/70 modal-preview-galeri">
+    <div class="relative w-full h-screen">
+      <div class="swiper-button-prev-preview-galeri absolute z-40 top-[400px] left-[250px]">
+        <img class="scale-90" src="./left.svg" alt="Prev">
+      </div>
+      <div class="swiper default-carousel-preview default-carousel-preview-galeri swiper-container">
+        <div class="relative text-white underline swiper-wrapper swiper-wrapper-preview-galeri font-inter underline-offset-4 decoration-1 animate-none">
+          <div class="swiper-slide">
+            <div class="flex justify-center mt-20 ">
+              <div class="relative w-[860px] h-[550px] border-[6px] border-white">
+                <img class="object-cover w-full h-full" src="./images/img-galeri.png" alt="">
+                <div class="absolute w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-galeri -right-4 -top-4">X</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next-preview-galeri absolute top-[400px] right-[250px] z-40">
+          <img class="scale-90" src="./right.svg" alt="Prev">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Slider Orasi -->
+  <div class="z-50 absolute hidden top-0 items-center justify-center w-screen h-screen bg-[#231F20]/70 modal-preview-orasi">
+    <div class="relative w-full h-screen">
+      <div class="absolute z-40 top-[450px] left-[300px] swiper-button-prev-preview-orasi">
+        <img class="scale-90" src="./left.svg" alt="Prev">
+      </div>
+      <div class="swiper default-carousel-preview default-carousel-preview-orasi swiper-container">
+        <div class="relative text-white underline swiper-wrapper swiper-wrapper-preview-orasi font-inter">
+        </div>
+      </div>
+      <div class="absolute top-[450px] right-[300px] z-40 swiper-button-next-preview-orasi">
+        <img class="scale-90" src="./right.svg" alt="Next">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Slider Struktur Bagan -->
+  <div class="z-50 absolute hidden top-0 items-center justify-center w-screen h-screen bg-[#231F20]/70 modal-preview-struktur-bagan">
+    <div class="relative w-full h-screen">
+      <div class="absolute z-40 top-[450px] left-[300px] swiper-button-prev-preview-struktur-bagan">
+        <img class="scale-90" src="./left.svg" alt="Prev">
+      </div>
+      <div class="swiper default-carousel-preview default-carousel-preview-struktur-bagan swiper-container">
+        <div class="relative text-white underline swiper-wrapper swiper-wrapper-preview-struktur-bagan font-inter">
+        </div>
+      </div>
+      <div class="absolute top-[450px] right-[300px] z-40 swiper-button-next-preview-struktur-bagan">
+        <img class="scale-90" src="./right.svg" alt="Next">
+      </div>
+    </div>
+  </div>
+
+
+  <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
+    <div class="relative p-2 bg-white rounded-lg h-96">
+      <img src="image.jpg" class="object-cover w-full h-full photo-inner2" alt="">
+      <button id="closeModal" class="absolute right-0 top-[-1rem] text-sm p-2 bg-white text-black rounded-full hover:bg-red-700" style="width: 2rem; height: 2rem;">
+        x
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let selectedDetailMenuIndex = -1;
+    document.addEventListener('DOMContentLoaded', function() {
+      toggleLanguage('ID');
+    });
+
+    window.swiperOrasi = new Swiper(".default-carousel-orasi", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next-orasi",
+        prevEl: ".swiper-button-prev-orasi",
+      },
+      observer: true,
+      observeParents: true,
+    });
+
+    window.swiperOrasi = new Swiper(".default-carousel-galeri", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next-galeri",
+        prevEl: ".swiper-button-prev-galeri",
+      },
+      observer: true,
+      observeParents: true,
+    });
+
+    window.swiperStrukturBagan = new Swiper(".default-carousel-struktur-bagan", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next-struktur-bagan",
+        prevEl: ".swiper-button-prev-struktur-bagan",
+      },
+      observer: true,
+      observeParents: true,
+    });
+
+    function toggleLanguage(lang) {
+      const deskripsiProfil = document.querySelector('.deskripsi-profil');
+      const deskripsiProfilEng = document.querySelector('.deskripsi-profil-eng');
+      const btnEN = document.getElementById('btnEN');
+      const btnID = document.getElementById('btnID');
+
+      if (lang === 'EN') {
+        btnEN.classList.add('font-bold');
+        btnID.classList.remove('font-bold');
+        deskripsiProfilEng.classList.remove('hidden');
+        deskripsiProfil.classList.add('hidden');
+      } else {
+        btnID.classList.add('font-bold');
+        btnEN.classList.remove('font-bold');
+        deskripsiProfilEng.classList.add('hidden');
+        deskripsiProfil.classList.remove('hidden');
+      }
+    }
+
+    document.getElementById('openModal').addEventListener('click', function(event) {
+      event.preventDefault(); // Menghentikan perilaku default link
+      document.getElementById('imageModal').classList.remove('hidden'); // Tampilkan modal
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('imageModal').classList.add('hidden'); // Sembunyikan modal
+    });
+
+
+
+    function updateScrollButtons() {
+      const container = document.querySelector('.space-y-4.overflow-y-scroll.scrollbar-hide.w-max');
+      const scrollUpButton = document.querySelector('.scroll-up');
+      const scrollDownButton = document.querySelector('.scroll-down');
+
+      scrollUpButton.style.opacity = container.scrollTop > 0 ? '1' : '0.5';
+
+      const maxScrollTop = container.scrollHeight - container.clientHeight;
+      scrollDownButton.style.opacity = container.scrollTop < maxScrollTop ? '1' : '0.5';
+    }
+
+    function scrollUp() {
+      const container = document.querySelector('.space-y-4.overflow-y-scroll.scrollbar-hide.w-max');
+      container.scrollBy({
+        top: -100,
+        behavior: 'smooth'
+      });
+      updateScrollButtons();
+    }
+
+    function scrollDown() {
+      const container = document.querySelector('.space-y-4.overflow-y-scroll.scrollbar-hide.w-max');
+      container.scrollBy({
+        top: 100,
+        behavior: 'smooth'
+      });
+      updateScrollButtons();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateScrollButtons();
+      const container = document.querySelector('.space-y-4.overflow-y-scroll.scrollbar-hide.w-max');
+      container.addEventListener('scroll', updateScrollButtons);
+    });
+
+
+    // Select all elements with the class 'box-wrapper'
+    const boxWrappers = document.querySelectorAll('.box-wrapper');
+    const boxContainer = document.querySelector('.box-container');
+    const headerTitle = document.querySelector('.header-title');
+    const headerTitleText = document.querySelector('.header-title-text');
+    const headerTitleHr = document.querySelector('.header-title-hr');
+
+    const photo = document.querySelector('.photo');
+    const photoInner = document.querySelector('.photo-inner');
+    const photoInner2 = document.querySelector('.photo-inner2');
+    const photoDesc = document.querySelector('.photo-desc');
+    const name = document.querySelector('.name');
+    const year = document.querySelector('.year');
+    const pendidikanTerakhir = document.querySelector('.pendidikan-terakhir');
+    const email = document.querySelector('.email');
+    const kantor = document.querySelector('.kantor');
+    const profileInd = document.querySelector('.deskripsi-profil');
+    const profileEng = document.querySelector('.deskripsi-profil-eng');
+
+    const detailTitleProfil = document.querySelector('.detail-title-profil');
+    const detailTitleGaleri = document.querySelector('.detail-title-galeri');
+    const detailTitleOrasi = document.querySelector('.detail-title-orasi');
+    const detailTitleStrukturBagan = document.querySelector('.detail-title-struktur-bagan');
+
+    const profilDescription = document.querySelector('.profil-description');
+    const containerGaleri = document.querySelector('.container-galeri');
+    const containerOrasi = document.querySelector('.container-orasi');
+    const containerStrukturBagan = document.querySelector('.container-struktur-bagan');
+
+    const backButton = document.querySelector('.back-button');
+
+    const initialPhotoWidth = photo.clientWidth
+    const initialPhotoHeight = photo.clientHeight
+    const initialPhotoDescWidth = photoDesc.clientWidth
+    const initialNameWidth = name.clientWidth
+    const initialYearHeight = year.clientHeight
+
+    const initialHeaderHrWidth = headerTitleHr.clientWidth
+    const initialHeaderHrX = headerTitleHr.clientX
+
+    const initialHeader = document.querySelector('.initial-header');
+    const initialHeaderText = document.querySelector('.initial-header h1');
+    const initialHeaderImg = document.querySelector('.initial-header img');
+    const initialSlider = document.querySelector('.initial-slider');
+    const swiperSliderRektor = document.querySelector('.swiper-container-rektor');
+
+    const modalPreviewGaleri = document.querySelector('.modal-preview-galeri');
+    const swiperWrapper = document.querySelector(".swiper-wrapper-galeri");
+    const modalSwiperWrapperGaleri = document.querySelector(".swiper-wrapper-preview-galeri");
+
+    const modalPreviewOrasi = document.querySelector(".modal-preview-orasi");
+    const swiperWrapperOrasi = document.querySelector(".swiper-wrapper-orasi");
+    const modalSwiperWrapperOrasi = document.querySelector(".swiper-wrapper-preview-orasi");
+
+    const modalPreviewStrukturBagan = document.querySelector(".modal-preview-struktur-bagan");
+    const swiperWrapperStrukturBagan = document.querySelector(".swiper-wrapper-preview-struktur-bagan");
+    const modalSwiperWrapperStrukturBagan = document.querySelector(".swiper-wrapper-preview-struktur-bagan");
+
+
+    function initialSetter() {
+      gsap.set(boxContainer, {
+        y: window.innerHeight,
+        duration: 1.5,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitle, {
+        y: -150,
+        duration: 1.25,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(photo, {
+        y: -10,
+        x: 60,
+        duration: 1.5,
+        scale: 1.5,
+        height: 580,
+        width: 500,
+        borderTopRightRadius: 40, // Set the top-right border radius
+        borderBottomRightRadius: 40, // Set the bottom-right border radius
+        borderTopLeftRadius: 0, // Set the top-right border radius
+        borderBottomLeftRadius: 0, // Set the bottom-right border radius
+        border: 'transparent',
+      });
+
+      gsap.set(photoInner, {
+        scale: 1.25,
+        duration: 1.5,
+        // ease: "power1.inOut",
+        // x: -40,
+        filter: "grayscale(80%)"
+      });
+
+      gsap.set(photoDesc, {
+        y: -580,
+        x: 730,
+        width: 680,
+        duration: 1.5,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(name, {
+        scale: 1.5,
+        duration: 1.5,
+        x: 120,
+        ease: "power1.inOut",
+        width: 470,
+        marginTop: 40,
+        //   border: '1px solid red',
+      });
+
+      gsap.set(year, {
+        opacity: 0,
+        height: 0,
+        duration: 1.5,
+        ease: "power1.inOut",
+      });
+
+      gsap.set(detailTitleProfil, {
+        top: 80,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power1.inOut",
+      });
+
+      gsap.set(profilDescription, {
+        x: -780,
+        duration: 1.5,
+        ease: "power1.inOut",
+      });
+
+    }
+
+    function initialSetterGaleri() {
+      gsap.set(boxContainer, {
+        y: window.innerHeight,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleText, {
+        y: -150,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleHr, {
+        width: 1100,
+        transformOrigin: 'right',
+        duration: 2,
+        x: -380
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(detailTitleGaleri, {
+        x: 230,
+        opacity: 1,
+        duration: 2,
+        ease: "power1.inOut",
+      });
+    }
+
+
+    function initialSetterOrasi() {
+      gsap.set(boxContainer, {
+        y: window.innerHeight,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleText, {
+        y: -150,
+        duration: 2,
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(headerTitleHr, {
+        width: 1100,
+        transformOrigin: 'right',
+        duration: 2,
+        x: -380
+        // ease: "power1.inOut",
+      });
+
+      gsap.set(detailTitleOrasi, {
+        x: 230,
+        opacity: 1,
+        duration: 2,
+        ease: "power1.inOut",
+      });
+
+      gsap.set(containerOrasi, {
+        x: -1100,
+        duration: 2,
+        ease: "power1.inOut",
+      });
+    }
+    // initialSetter();
+
+    // initialSetterGaleri()
+
+    // initialSetterOrasi();
+
+    // Add event listeners to each 'box-wrapper'
+
+    gsap.set(photo, {
+      x: -500
+    })
+
+    gsap.set(boxContainer, {
+      y: window.innerHeight,
+    })
+
+    gsap.set(photoDesc, {
+      opacity: 0
+    })
+
+    gsap.set(headerTitle, {
+      y: -150
+    })
+
+    boxWrappers.forEach((box, index) => {
+      box.addEventListener('click', () => {
+
+        if (index === 0) {
+          selectedDetailMenuIndex = 0;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitle, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(initialHeaderText, {
+            y: -230,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(photo, {
+            y: -10,
+            x: 60,
+            duration: 1,
+            scale: 1.5,
+            height: 580,
+            width: 500,
+            borderTopRightRadius: 40, // Set the top-right border radius
+            borderBottomRightRadius: 40, // Set the bottom-right border radius
+            borderTopLeftRadius: 0, // Set the top-right border radius
+            borderBottomLeftRadius: 0, // Set the bottom-right border radius
+            border: 'transparent',
+          });
+
+          gsap.to(photoInner, {
+            scale: 1.25,
+            duration: 1,
+            // ease: "power1.inOut",
+            x: -40,
+            filter: "grayscale(80%)"
+          });
+
+          gsap.to(photoDesc, {
+            y: -580,
+            x: 730,
+            width: 680,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(name, {
+            scale: 1.5,
+            duration: 1,
+            x: 120,
+            ease: "power1.inOut",
+            width: 470,
+            marginTop: 40,
+            //   border: '1px solid red',
+          });
+
+          gsap.to(year, {
+            opacity: 0,
+            height: 0,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleProfil, {
+            top: 80,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(profilDescription, {
+            x: -780,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        } else if (index === 1) {
+          selectedDetailMenuIndex = 1;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleText, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(initialHeaderText, {
+            y: -230,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(photoDesc, {
+            y: 0,
+            x: 0,
+            width: initialPhotoDescWidth,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleHr, {
+            width: 1100,
+            transformOrigin: 'right',
+            duration: 1,
+            x: -380
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleGaleri, {
+            x: 230,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(containerGaleri, {
+            x: -1100,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        } else if (index === 2) {
+          selectedDetailMenuIndex = 2;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleText, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(initialHeaderText, {
+            y: -230,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleHr, {
+            width: 1100,
+            transformOrigin: 'right',
+            duration: 1,
+            x: -380
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleOrasi, {
+            x: 230,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(containerOrasi, {
+            x: -1100,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        } else if (index === 3) {
+          selectedDetailMenuIndex = 3;
+
+          gsap.to(boxContainer, {
+            y: window.innerHeight,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleText, {
+            y: -150,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(initialHeaderText, {
+            y: -230,
+            duration: 1,
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(headerTitleHr, {
+            width: 900,
+            transformOrigin: 'right',
+            duration: 1,
+            x: -190
+            // ease: "power1.inOut",
+          });
+
+          gsap.to(detailTitleStrukturBagan, {
+            x: 410,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(containerStrukturBagan, {
+            x: -1100,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        }
+
+      });
+    });
+
+    backButton.addEventListener('click', () => {
+      if (selectedDetailMenuIndex === 0) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitle, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(initialHeaderText, {
+          y: -80,
+          duration: 1,
+        })
+
+        gsap.to(photo, {
+          y: 0,
+          x: 0,
+          duration: 1,
+          scale: 1,
+          height: initialPhotoHeight,
+          width: initialPhotoWidth,
+          borderTopRightRadius: 40, // Set the top-right border radius
+          borderBottomRightRadius: 40, // Set the bottom-right border radius
+          borderTopLeftRadius: 40, // Set the top-right border radius
+          borderBottomLeftRadius: 40, // Set the bottom-right border radius
+
+        });
+
+        gsap.to(photoInner, {
+          scale: 1,
+          duration: 1,
+          // ease: "power1.inOut",
+          x: 0,
+          filter: "grayscale(0%)"
+        });
+
+        gsap.to(photoDesc, {
+          y: 0,
+          x: 0,
+          width: initialPhotoDescWidth,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(name, {
+          scale: 1,
+          duration: 1,
+          x: 0,
+          ease: "power1.inOut",
+          width: initialNameWidth,
+          marginTop: 20,
+        });
+
+        gsap.to(year, {
+          opacity: 1,
+          height: initialYearHeight,
+          duraHeight: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleProfil, {
+          top: -80,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(profilDescription, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        selectedDetailMenuIndex = -1
+      } else if (selectedDetailMenuIndex === 1) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleText, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(initialHeaderText, {
+          y: -80,
+          duration: 1,
+        })
+
+        gsap.to(headerTitleHr, {
+          width: initialHeaderHrWidth,
+          duration: 1,
+          x: -20
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleGaleri, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(containerGaleri, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        selectedDetailMenuIndex = -1
+      } else if (selectedDetailMenuIndex === 2) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleText, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(initialHeaderText, {
+          y: -80,
+          duration: 1,
+        })
+
+        gsap.to(headerTitleHr, {
+          width: initialHeaderHrWidth,
+          duration: 1,
+          x: -20
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleOrasi, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(containerOrasi, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        selectedDetailMenuIndex = -1
+      } else if (selectedDetailMenuIndex === 3) {
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(headerTitleText, {
+          y: 0,
+          duration: 1,
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(initialHeaderText, {
+          y: -80,
+          duration: 1,
+        })
+
+        gsap.to(headerTitleHr, {
+          width: initialHeaderHrWidth,
+          duration: 1,
+          x: -20
+          // ease: "power1.inOut",
+        });
+
+        gsap.to(detailTitleStrukturBagan, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(containerStrukturBagan, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+        selectedDetailMenuIndex = -1
+      } else if (selectedDetailMenuIndex === -1) {
+        gsap.to(photo, {
+          x: -500,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(boxContainer, {
+          y: window.innerHeight,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(photoDesc, {
+          opacity: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(headerTitle, {
+          y: -150,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(initialSlider, {
+          y: 250,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(initialHeaderImg, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(initialHeaderText, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+      }
+    });
+
+    var swiper = new Swiper(".default-carousel", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    var swiperPreview = new Swiper(".default-carousel-preview", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <script type="module">
+    import sanityClient from "https://cdn.jsdelivr.net/npm/@sanity/client/+esm";
+
+    const client = sanityClient({
+      projectId: 'bwgbs60a',
+      dataset: 'production',
+      apiVersion: '2023-01-01',
+      useCdn: true,
+    });
+
+    document.addEventListener("DOMContentLoaded", async function() {
+      // ini bisa dijadiin satu file config client
+      try {
+        // fetching dari sini
+        const rektorData = await client.fetch(`
+                *[_type == "rektor"][0]{
+                    profilRektor[]->{
+                        _id,
+                        nama,
+                        fotoProfil{
+                            asset->{
+                                url
+                            }
+                        },
+                        deskripsiProfil,
+                        deskripsiProfil_ENG,
+                        masaJabatan,
+                        bidangKepakaran,
+                        email,
+                        kantor
+                    }
+                }
+            `);
+
+        const swiperContainer = document.querySelector('.swiper-wrapper');
+        swiperContainer.innerHTML = '';
+
+        //  looping hasil fetching
+        if (rektorData && rektorData.profilRektor) {
+          rektorData.profilRektor.forEach((item, index) => {
+            let slide = document.createElement('div');
+            slide.className = 'swiper-slide swiper-slide-rektor transition duration-300 max-w-xs border-2 border-gray-200 rounded-3xl shadow';
+
+            const imageUrl = item?.fotoProfil?.asset?.url || '/assets/default-image.png';
+            const nama = item?.nama || 'Tidak Ada Nama';
+            const masaJabatan = item?.masaJabatan || 'Tidak Ada Masa Jabatan';
+            const pendidikanTerakhir = item?.bidangKepakaran || 'Tidak Ada Pendidikan';
+            const deskripsiProfil = item?.deskripsiProfil || 'Tidak Ada Deskripsi';
+            const deskripsiProfilEng = item?.deskripsiProfil_ENG || 'Tidak Ada Deskripsi ENG';
+            const indexs = index + 1;
+
+            slide.innerHTML = `
+                            <div class="relative">
+                                <img class="rounded-t-3xl bg-[#FFE600] w-[300px] h-[220px] font-bold border border-white border-b-4 object-cover" src="${imageUrl}" alt="${nama}" />
+                                <span class="absolute bottom-0 mb-3 text-5xl font-normal text-center text-white left-5 dark:text-gray-400">${indexs}</span>
+                            </div>                        
+                            <div class="flex flex-col mx-5 mb-5">
+                                <h5 class="my-3 mb-2 text-lg tracking-tight text-center text-white dark:text-white">${nama}</h5>
+                                <p class="items-center text-xs font-light text-center text-white line-clamp-5 font-space-grotesk">${deskripsiProfil}</p>
+                                <p id="masa-jabatan" class="text-base font-bold text-center text-white">(${masaJabatan})</p>
+                            </div>
+                        `;
+
+            slide.addEventListener('click', () => {
+              goToDetailRektor(item);
+            });
+            swiperContainer.appendChild(slide);
+          });
+
+          const swiper = new Swiper('.multiple-slide-carousel', {
+            loop: true,
+            slidesPerView: 4,
+            pagination: true,
+            spaceBetween: 80,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            on: {
+              init: function() {
+                updateScaleEffect(this);
+              },
+              slideChange: function() {
+                updateScaleEffect(this);
+              }
+            },
+          });
+
+          function updateScaleEffect(swiper) {
+            swiper.slides.forEach((slide) => {
+              slide.style.transform = 'scale(1)';
+              slide.style.opacity = '0.5';
+              const spanElements = slide.querySelectorAll('span');
+              spanElements.forEach(element => {
+                element.style.color = '#FFFFFF';
+              });
+            });
+
+            const activeSlide = swiper.slides[swiper.activeIndex + 1];
+            if (activeSlide) {
+              activeSlide.style.transform = 'scale(1.25)';
+              activeSlide.style.opacity = '1';
+              const textElements = activeSlide.querySelectorAll('span');
+              textElements.forEach(element => {
+                element.style.color = '#00426B';
+              });
+            }
+          }
+        } else {
+          console.error('Tidak ada data profil rektor yang ditemukan.');
+        }
+      } catch (error) {
+        console.error('Error fetching data from Sanity:', error);
+      }
+
+      gsap.set(initialHeader, {
+        y: 300,
+        duration: 1,
+        ease: "power1.inOut",
+      });
+
+      gsap.set(initialSlider, {
+        y: 1000,
+        duration: 1,
+        ease: "power1.inOut",
+      });
+
+      initialHeaderImg.addEventListener('click', () => {
+        if (selectedDetailMenuIndex === -1) {
+          selectedDetailMenuIndex = 11;
+          gsap.fromTo(initialHeader, {
+            y: 300,
+            duration: 1,
+            // ease: "power1.inOut",
+          }, {
+            y: 0,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+
+          gsap.fromTo(initialSlider, {
+            y: 1000,
+            duration: 1,
+            // ease: "power1.inOut",
+          }, {
+            y: 250,
+            duration: 1,
+            ease: "power1.inOut",
+          });
+        }
+
+      });
+
+      async function populateGaleri(id) {
+        try {
+          const dataGaleri = await client.fetch(
+            `*[_type == "galeri" && rektor._ref == "${id}"]{
+        _id,
+        namaGaleri,
+        fotoDokumentasi[] {
+          foto {
+            asset-> {
+              url
+            }
+          },
+          nama,
+          tanggal
+        }
+      }`
+          );
+          console.log("masuk cuy");
+          if (dataGaleri && dataGaleri[0]?.fotoDokumentasi?.length > 0) {
+            const swiperWrapper = document.querySelector(".swiper-wrapper-galeri");
+
+            // Hapus semua slide sebelumnya (reset)
+            swiperWrapper.innerHTML = "";
+
+            // Membuat slide pertama dengan maksimal 9 item
+            const maxItemsPerSlide = 9;
+            let currentSlide = null;
+
+            console.log("Data galeri:", dataGaleri);
+
+            // Iterasi data
+            dataGaleri[0].fotoDokumentasi.forEach((item, index) => {
+              if (index % maxItemsPerSlide === 0) {
+                currentSlide = document.createElement("div");
+                currentSlide.className = "swiper-slide";
+                currentSlide.innerHTML = `
+            <div class="grid w-full h-full grid-cols-3 grid-rows-3 gap-x-12 gap-y-8"></div>
+          `;
+                swiperWrapper.appendChild(currentSlide);
+              }
+
+              // Tambahkan konten ke dalam slide
+              const grid = currentSlide.querySelector(".grid");
+              const imageUrl = item?.foto?.asset?.url || "./images/img-galeri.png";
+              const nama = item?.nama || "Tidak Ada Nama";
+              const tanggal = item?.tanggal || "Tidak Ada Tanggal";
+
+              const itemDiv = document.createElement("div");
+              itemDiv.className = "flex-col items-center";
+              itemDiv.innerHTML = `
+          <img class="mx-auto w-full h-[130px] shadow-[0_4px_16px_rgba(0,0,0,0.25)] object-cover border-4 border-white mb-2" src="${imageUrl}" alt="${nama}">
+          <p class="w-full text-base font-light text-center">${nama} <br> ${tanggal}</p>
+        `;
+
+              itemDiv.addEventListener("click", async () => {
+                modalPreviewGaleri.classList.remove("hidden");
+                modalPreviewGaleri.classList.add("flex");
+
+                // Clear previous modal slides
+                modalSwiperWrapperGaleri.innerHTML = "";
+
+                // Populate the modal swiper with all gallery images
+                dataGaleri[0].fotoDokumentasi.forEach((modalItem, modalIndex) => {
+                  const modalImageUrl = modalItem?.foto?.asset?.url || "./images/img-galeri.png";
+                  const modalSlide = document.createElement("div");
+                  modalSlide.className = "swiper-slide";
+                  modalSlide.innerHTML = `
+                <div class="flex justify-center mt-20">
+                  <div class="relative w-[860px] h-[550px] border-[6px] border-white">
+                    <img class="object-cover w-full h-full" src="${modalImageUrl}" alt="">
+                    <button class="absolute z-50 w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-galeri -right-4 -top-4">X</button>
+                  </div>
+                </div>  
+              `;
+
+                  const btnCloseModalPreviewGaleri = modalSlide.querySelectorAll(".btn-close-preview-galeri");
+                  btnCloseModalPreviewGaleri.forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                      modalPreviewGaleri.classList.add("hidden");
+                    })
+                  })
+                  modalSwiperWrapperGaleri.appendChild(modalSlide);
+                });
+
+                // Tunggu sebentar untuk memastikan DOM selesai diupdate
+                await new Promise(resolve => setTimeout(resolve, 10));
+
+                // Destroy existing Swiper instance if it exists
+                if (window.swiperPreviewGaleri) {
+                  window.swiperPreviewGaleri.destroy();
+                }
+
+                // Initialize Swiper for the modal with the selected index
+                window.swiperPreviewGaleri = new Swiper(".default-carousel-preview-galeri", {
+                  loop: true,
+                  initialSlide: index, // Set the initial slide to the clicked image index
+                  navigation: {
+                    nextEl: ".swiper-button-next-preview-galeri",
+                    prevEl: ".swiper-button-prev-preview-galeri",
+                  },
+                  observer: true, // Ensures Swiper detects changes in slides
+                  observeParents: true,
+                });
+
+                // Force Swiper to update its state and detect new slides
+                window.swiperPreviewGaleri.update();
+              });
+              grid.appendChild(itemDiv);
+            });
+
+            // Cek jumlah slide dan sembunyikan tombol navigasi jika kurang dari 2 slide
+            const slides = swiperWrapper.querySelectorAll(".swiper-slide");
+            const prevButton = document.querySelector(".swiper-button-prev img");
+            const nextButton = document.querySelector(".swiper-button-next img");
+
+            console.log(prevButton);
+          } else {
+            const swiperWrapper = document.querySelector(".swiper-wrapper-galeri");
+            swiperWrapper.innerHTML = ""; // Hapus semua elemen anak
+            console.log("Data galeri kosong, swiper di-reset.");
+          }
+        } catch (error) {
+          console.error("Error populating galeri:", error);
+        }
+      }
+
+      async function populateOrasi(id) {
+        console.log("id rektor:", id);
+        try {
+          const dataOrasi = await client.fetch(`
+           *[_type == "orasi" && rektor._ref == "${id}"]{
+            _id,
+            _type,
+            "rektorNama": rektor->nama,
+            "rektorId": rektor->_id,
+            pdf[] {
+              "judul": judulPdf,
+              "fileUrl": file.asset->url,
+              "fileName": file.asset->originalFilename
+            }
+          }
+        `);
+
+          console.log("Data Orasi:", dataOrasi);
+
+          const swiperWrapper = document.querySelector('.swiper-wrapper-orasi');
+          swiperWrapper.innerHTML = ""; // Bersihkan konten lama
+
+          if (!dataOrasi.length || !dataOrasi[0].pdf || !dataOrasi[0].pdf.length) {
+            swiperWrapper.innerHTML = "<p class='text-center text-white'>Tidak ada orasi tersedia</p>";
+            return;
+          }
+
+          let slideContent = "";
+          let count = 0;
+          const modalPreviewOrasi = document.querySelector(".modal-preview-orasi");
+          const modalSwiperWrapperOrasi = document.querySelector(".swiper-wrapper-preview-orasi");
+
+          dataOrasi[0].pdf.forEach((pdfItem, index) => {
+            const namaPdf = pdfItem.judul || "Dokumen Tidak Bernama";
+            const pdfUrl = pdfItem.fileUrl || "#";
+
+            // Setiap 6 elemen, buat slide baru
+            if (count % 6 === 0) {
+              if (count !== 0) {
+                slideContent += `</div></div>`; // Tutup slide sebelumnya
+              }
+              slideContent += `<div class="px-28 swiper-slide">
+                                    <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">`;
+            }
+
+            // Tambahkan elemen PDF ke dalam slide
+            slideContent += `
+                <div class="flex-col items-center cursor-pointer orasi-item" data-index="${index}" data-url="${pdfUrl}">
+                    <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="PDF">
+                    <p class="mx-auto text-base font-light text-center w-[90%]">${namaPdf}</p>
+                </div>
+            `;
+
+            count++;
+          });
+
+          slideContent += `</div></div>`; // Tutup slide terakhir
+          swiperWrapper.innerHTML = slideContent;
+
+          // Tambahkan event listener untuk membuka modal
+          document.querySelectorAll(".orasi-item").forEach((item, index) => {
+            item.addEventListener("click", async () => {
+              modalPreviewOrasi.classList.remove("hidden");
+              modalPreviewOrasi.classList.add("flex");
+
+              // Clear previous modal slides
+              modalSwiperWrapperOrasi.innerHTML = "";
+
+              // Populate modal dengan semua PDF
+              dataOrasi[0].pdf.forEach((modalItem, modalIndex) => {
+                const modalPdfUrl = modalItem.fileUrl || "#";
+                const modalJudul = modalItem.judul || "Dokumen Tidak Bernama";
+
+                const modalSlide = document.createElement("div");
+                modalSlide.className = "swiper-slide";
+                modalSlide.innerHTML = `
+                        <div class="flex justify-center mt-20">
+                            <div class="-translate-y-[80px] relative w-[650px] h-[750px] border-[6px] border-white bg-white flex flex-col justify-center items-center -translate-y-10">
+                                <iframe src="${modalPdfUrl}#toolbar=0" class="w-full h-full" frameborder="0"></iframe>
+                                <button class="absolute z-50 w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-orasi -right-4 -top-4">X</button>
+                            </div>
+                        </div>
+                    `;
+
+                modalSwiperWrapperOrasi.appendChild(modalSlide);
+              });
+
+              // Tunggu sebentar untuk memastikan DOM selesai diupdate
+              await new Promise(resolve => setTimeout(resolve, 10));
+
+              // Destroy existing Swiper instance jika ada
+              if (window.swiperPreviewOrasi) {
+                window.swiperPreviewOrasi.destroy();
+              }
+
+              // Inisialisasi Swiper untuk modal dengan slide pertama yang diklik
+              window.swiperPreviewOrasi = new Swiper(".default-carousel-preview-orasi", {
+                loop: true,
+                initialSlide: index,
+                navigation: {
+                  nextEl: ".swiper-button-next-preview-orasi",
+                  prevEl: ".swiper-button-prev-preview-orasi",
+                },
+                observer: true,
+                observeParents: true,
+              });
+
+              window.swiperPreviewOrasi.update();
+            });
+          });
+
+          // Event listener untuk tombol close modal
+          document.querySelector(".modal-preview-orasi").addEventListener("click", (event) => {
+            if (event.target.classList.contains("btn-close-preview-orasi")) {
+              modalPreviewOrasi.classList.add("hidden");
+            }
+          });
+
+        } catch (error) {
+          console.error("Error fetching orasi data:", error);
+        }
+      }
+
+      async function populateStrukturBagan(id) {
+        console.log("id rektor:", id);
+        try {
+          const dataStrukturBagan = await client.fetch(`
+            *[_type == "strukturBagan" && rektor._ref == "${id}"]{
+                _id,
+                _type,
+                "rektorNama": rektor->nama,
+                "rektorId": rektor->_id,
+                strukturPdf[] {
+                    "judul": judulPdf,
+                    "fileUrl": filePdf.asset->url,
+                    "fileName": filePdf.asset->originalFilename
+                }
+            }
+        `);
+
+          console.log("Data Struktur Bagan:", dataStrukturBagan);
+
+          const swiperWrapper = document.querySelector('.swiper-wrapper-struktur-bagan');
+          swiperWrapper.innerHTML = ""; // Bersihkan konten lama
+
+          if (!dataStrukturBagan.length || !dataStrukturBagan[0].strukturPdf || !dataStrukturBagan[0].strukturPdf.length) {
+            swiperWrapper.innerHTML = "<p class='text-center text-white'>Tidak ada struktur bagan tersedia</p>";
+            return;
+          }
+
+          let slideContent = "";
+          let count = 0;
+          const modalPreviewStrukturBagan = document.querySelector(".modal-preview-struktur-bagan");
+          const modalSwiperWrapperStrukturBagan = document.querySelector(".swiper-wrapper-preview-struktur-bagan");
+
+          dataStrukturBagan[0].strukturPdf.forEach((pdfItem, index) => {
+            const namaPdf = pdfItem.judul || "Dokumen Tidak Bernama";
+            const pdfUrl = pdfItem.fileUrl || "#";
+
+            // Setiap 6 elemen, buat slide baru
+            if (count % 6 === 0) {
+              if (count !== 0) {
+                slideContent += `</div></div>`; // Tutup slide sebelumnya
+              }
+              slideContent += `<div class="px-28 swiper-slide">
+                                    <div class="grid w-full h-full grid-cols-3 grid-rows-2 gap-x-0 gap-y-8">`;
+            }
+
+            // Tambahkan elemen PDF ke dalam slide
+            slideContent += `
+                <div class="flex-col items-center cursor-pointer struktur-item" data-index="${index}" data-url="${pdfUrl}">
+                    <img class="object-cover mx-auto w-[124px]" src="./images/pdf-icon.svg" alt="PDF">
+                    <p class="mx-auto text-base font-light text-center w-[90%]">${namaPdf}</p>
+                </div>
+            `;
+
+            count++;
+          });
+
+          slideContent += `</div></div>`; // Tutup slide terakhir
+          swiperWrapper.innerHTML = slideContent;
+
+          // Tambahkan event listener untuk membuka modal
+          document.querySelectorAll(".struktur-item").forEach((item, index) => {
+            item.addEventListener("click", async () => {
+              modalPreviewStrukturBagan.classList.remove("hidden");
+              modalPreviewStrukturBagan.classList.add("flex");
+
+              // Clear previous modal slides
+              modalSwiperWrapperStrukturBagan.innerHTML = "";
+
+              // Populate modal dengan semua PDF
+              dataStrukturBagan[0].strukturPdf.forEach((modalItem, modalIndex) => {
+                const modalPdfUrl = modalItem.fileUrl || "#";
+                const modalJudul = modalItem.judul || "Dokumen Tidak Bernama";
+
+                const modalSlide = document.createElement("div");
+                modalSlide.className = "swiper-slide";
+                modalSlide.innerHTML = `
+                        <div class="flex justify-center mt-20">
+                            <div class="relative w-[700px] h-[700px] border-[6px] border-white bg-white flex flex-col justify-center items-center -translate-y-10">
+                                <iframe src="${modalPdfUrl}#toolbar=0" class="w-full h-full" frameborder="0"></iframe>
+                                <button class="absolute z-50 w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-struktur -right-4 -top-4">X</button>
+                            </div>
+                        </div>
+                    `;
+
+                modalSwiperWrapperStrukturBagan.appendChild(modalSlide);
+              });
+
+              // Tunggu sebentar untuk memastikan DOM selesai diupdate
+              await new Promise(resolve => setTimeout(resolve, 10));
+
+              // Destroy existing Swiper instance jika ada
+              if (window.swiperPreviewStrukturBagan) {
+                window.swiperPreviewStrukturBagan.destroy();
+              }
+
+              // Inisialisasi Swiper untuk modal dengan slide pertama yang diklik
+              window.swiperPreviewStrukturBagan = new Swiper(".default-carousel-preview-struktur-bagan", {
+                loop: true,
+                initialSlide: index,
+                navigation: {
+                  nextEl: ".swiper-button-next-preview-struktur-bagan",
+                  prevEl: ".swiper-button-prev-preview-struktur-bagan",
+                },
+                observer: true,
+                observeParents: true,
+              });
+
+              window.swiperPreviewStrukturBagan.update();
+            });
+          });
+
+          // Event listener untuk tombol close modal
+          document.querySelector(".modal-preview-struktur-bagan").addEventListener("click", (event) => {
+            if (event.target.classList.contains("btn-close-preview-struktur")) {
+              modalPreviewStrukturBagan.classList.add("hidden");
+            }
+          });
+
+        } catch (error) {
+          console.error("Error fetching Struktur Bagan data:", error);
+        }
+      }
+
+
+      async function goToDetailRektor(item) {
+        selectedDetailMenuIndex = 10;
+        const profilContainer = document.querySelector('.space-y-4.overflow-y-scroll.scrollbar-hide');
+
+        photoInner.src = item?.fotoProfil?.asset?.url;
+        photoInner2.src = item?.fotoProfil?.asset?.url;
+        name.textContent = item?.nama;
+        year.textContent = `(${item?.masaJabatan})`;
+        pendidikanTerakhir.textContent = `${item?.bidangKepakaran}`
+        email.textContent = `${item?.email}`
+        kantor.textContent = `${item?.kantor}`
+        profileInd.textContent = `${item?.deskripsiProfil}`
+        profileEng.textContent = `${item?.deskripsiProfil_ENG}`
+
+        populateGaleri(item?._id)
+        populateOrasi(item?._id)
+        populateStrukturBagan(item?._id)
+
+        console.log(item)
+
+        gsap.to(boxContainer, {
+          y: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(photo, {
+          x: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(initialSlider, {
+          y: 1000,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(photoDesc, {
+          opacity: 1
+        })
+
+        gsap.to(backButton, {
+          opacity: 1
+        })
+
+        gsap.to(initialHeaderImg, {
+          x: 650,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(initialHeaderText, {
+          x: -450,
+          y: -85,
+          scale: 0.85,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+
+        gsap.to(headerTitle, {
+          y: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        })
+      }
+
+      window.goToDetailRektor = goToDetailRektor;
+    });
+  </script>
+</body>
+
+</html>
