@@ -17,6 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs"></script>
   <title>Profil Rektor</title>
   <style>
     body,
@@ -1365,10 +1366,31 @@
         prevEl: ".swiper-button-prev",
       },
     });
+    function scrollUpOrasi() {
+        const iframe = document.querySelector('.iframe-orasi');
+        if (iframe) {
+          iframe.contentWindow.scrollBy({
+            top: -100,  
+            behavior: 'smooth'
+          });
+        }
+      }
+
+      function scrollDownOrasi() {
+        const iframe = document.querySelector('.iframe-orasi');
+        if (iframe) {
+          iframe.contentWindow.scrollBy({
+            top: 100,  
+            behavior: 'smooth'
+          });
+        }
+      }
   </script>
 
   <script type="module">
     import sanityClient from "https://cdn.jsdelivr.net/npm/@sanity/client/+esm";
+    import { getDocument, GlobalWorkerOptions  } from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs';
+    GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
 
     const client = sanityClient({
       projectId: 'bwgbs60a',
@@ -1725,14 +1747,74 @@
                 modalSlide.innerHTML = `
                         <div class="flex justify-center mt-20">
                             <div class="-translate-y-[80px] relative w-[650px] h-[750px] border-[6px] border-white bg-white flex flex-col justify-center items-center -translate-y-10">
-                                <iframe src="${modalPdfUrl}#toolbar=0" class="w-full h-full" frameborder="0"></iframe>
-                                <button class="absolute z-50 w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-orasi -right-4 -top-4">X</button>
+                              <div class="flex flex-col translate-x-[350px] translate-y-[25px]">
+                                <button class="prev-page text-black"><img src="scroll-icon.svg" class="mb-3 w-6 h-6 rotate-180"></button>
+                                <button class="next-page text-black"><img src="scroll-icon.svg" class="w-6 h-6" ></button>
+                              </div>
+                              <canvas id="canvas-${modalIndex}" class="w-full h-full"></canvas>
                             </div>
                         </div>
+                        <button class="z-50 text-center text-black  rounded-full cursor-pointer absolute bottom-[4.25rem] right-20">
+                          <img src="./images/back-icon.svg" class="w-8 transition-all btn-close-preview-orasi  h-auto" alt="Back Button">
+                        </button>
                     `;
 
                 modalSwiperWrapperOrasi.appendChild(modalSlide);
+                renderPDFToCanvas(modalPdfUrl, `canvas-${modalIndex}`);
               });
+
+              function renderPDFToCanvas(pdfUrl, canvasId) {
+                  let pdfDoc = null;
+                  let pageNum = 1;
+                  const canvas = document.getElementById(canvasId);
+                  const ctx = canvas.getContext('2d');
+
+                  function renderPage(num) {
+                      pdfDoc.getPage(num).then(function(page) {
+                          const viewport = page.getViewport({scale: 1});
+                          canvas.height = viewport.height;
+                          canvas.width = viewport.width;
+
+                          const renderContext = {
+                              canvasContext: ctx,
+                              viewport: viewport
+                          };
+                          page.render(renderContext);
+                      });
+                  }
+
+                  function queueRenderPage(num) {
+                      if (pdfDoc !== null) {
+                          renderPage(num);
+                      }
+                  }
+
+                  function onPrevPage() {
+                      if (pageNum <= 1) {
+                          return;
+                      }
+                      pageNum--;
+                      queueRenderPage(pageNum);
+                  }
+
+                  function onNextPage() {
+                      if (pageNum >= pdfDoc.numPages) {
+                          return;
+                      }
+                      pageNum++;
+                      queueRenderPage(pageNum);
+                  }
+
+                  canvas.parentElement.querySelector('.prev-page').addEventListener('click', onPrevPage);
+                  canvas.parentElement.querySelector('.next-page').addEventListener('click', onNextPage);
+
+                  getDocument(pdfUrl).promise.then((pdfDoc_) => {
+                      pdfDoc = pdfDoc_;
+                      renderPage(pageNum);
+                  }).catch(error => {
+                      console.error('Error loading PDF: ', error);
+                  });
+              }
 
               // Tunggu sebentar untuk memastikan DOM selesai diupdate
               await new Promise(resolve => setTimeout(resolve, 10));
@@ -1757,6 +1839,7 @@
               window.swiperPreviewOrasi.update();
             });
           });
+          
 
           // Event listener untuk tombol close modal
           document.querySelector(".modal-preview-orasi").addEventListener("click", (event) => {
@@ -1848,14 +1931,65 @@
                 modalSlide.innerHTML = `
                         <div class="flex justify-center mt-20">
                             <div class="relative w-[700px] h-[700px] border-[6px] border-white bg-white flex flex-col justify-center items-center -translate-y-10">
-                                <iframe src="${modalPdfUrl}#toolbar=0" class="w-full h-full" frameborder="0"></iframe>
-                                <button class="absolute z-50 w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-struktur -right-4 -top-4">X</button>
+                              <canvas id="canvas-${modalIndex}" class="w-full h-full"></canvas>
+                              <button class="absolute z-50 w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-struktur -right-4 -top-4">X</button>
                             </div>
                         </div>
                     `;
 
                 modalSwiperWrapperStrukturBagan.appendChild(modalSlide);
+                renderPDFToCanvas(modalPdfUrl, `canvas-${modalIndex}`);
               });
+
+              function renderPDFToCanvas(pdfUrl, canvasId) {
+                  let pdfDoc = null;
+                  let pageNum = 1;
+                  const canvas = document.getElementById(canvasId);
+                  const ctx = canvas.getContext('2d');
+
+                  function renderPage(num) {
+                      pdfDoc.getPage(num).then(function(page) {
+                          const viewport = page.getViewport({scale: 1});
+                          canvas.height = viewport.height;
+                          canvas.width = viewport.width;
+
+                          const renderContext = {
+                              canvasContext: ctx,
+                              viewport: viewport
+                          };
+                          page.render(renderContext);
+                      });
+                  }
+
+                  function queueRenderPage(num) {
+                      if (pdfDoc !== null) {
+                          renderPage(num);
+                      }
+                  }
+
+                  function onPrevPage() {
+                      if (pageNum <= 1) {
+                          return;
+                      }
+                      pageNum--;
+                      queueRenderPage(pageNum);
+                  }
+
+                  function onNextPage() {
+                      if (pageNum >= pdfDoc.numPages) {
+                          return;
+                      }
+                      pageNum++;
+                      queueRenderPage(pageNum);
+                  }
+
+                  getDocument(pdfUrl).promise.then((pdfDoc_) => {
+                      pdfDoc = pdfDoc_;
+                      renderPage(pageNum);
+                  }).catch(error => {
+                      console.error('Error loading PDF: ', error);
+                  });
+              }
 
               // Tunggu sebentar untuk memastikan DOM selesai diupdate
               await new Promise(resolve => setTimeout(resolve, 10));
