@@ -148,6 +148,11 @@
       </div>
     </header>
     <main class="flex w-screen">
+      <div class="absolute w-full h-full -z-20">
+        <video autoplay loop muted playsinline class="object-cover w-full h-full">
+            <source src="Animation Background [AB50CD0].mp4" type="video/mp4">
+        </video>
+      </div>
       <div>
         <div class="mx-16">
           <div class="photo w-[270px] h-[440px] rounded-[2rem] bg-[#FFE600] border-white border-[3px] overflow-hidden flex items-end">
@@ -490,7 +495,7 @@
   <!-- MODAL SLIDER GALERI -->
   <div class="z-50 absolute hidden top-0 items-center justify-center w-screen h-screen bg-[#231F20]/70 modal-preview-galeri">
     <div class="relative w-full h-screen">
-      <div class="swiper-button-prev-preview-galeri absolute z-40 top-[400px] left-[250px]">
+      <div class="swiper-button-prev-preview-galeri absolute z-40 top-[400px] left-[250px] mr-10">
         <img class="scale-90" src="./left.svg" alt="Prev">
       </div>
       <div class="swiper default-carousel-preview default-carousel-preview-galeri swiper-container">
@@ -504,7 +509,7 @@
             </div>
           </div>
         </div>
-        <div class="swiper-button-next-preview-galeri absolute top-[400px] right-[250px] z-40">
+        <div class="swiper-button-next-preview-galeri absolute top-[400px] right-[250px] ml-10 z-40">
           <img class="scale-90" src="./right.svg" alt="Prev">
         </div>
       </div>
@@ -1434,6 +1439,7 @@
           const swiper = new Swiper('.multiple-slide-carousel', {
             loop: true,
             slidesPerView: 4,
+            initialSlide: 0, 
             pagination: true,
             spaceBetween: 80,
             navigation: {
@@ -1584,7 +1590,7 @@
                   modalSlide.innerHTML = `
                 <div class="flex justify-center mt-20">
                   <div class="relative w-[860px] h-[550px] border-[6px] border-white">
-                    <img class="object-cover w-full h-full" src="${modalImageUrl}" alt="">
+                    <img class="object-cover w-[860px] h-[540px]" src="${modalImageUrl}" alt="">
                     <button class="absolute z-50 w-6 h-6 text-center text-black bg-white rounded-full cursor-pointer btn-close-preview-galeri -right-4 -top-4">X</button>
                   </div>
                 </div>  
