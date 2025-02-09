@@ -151,7 +151,7 @@
     <main class="flex w-screen">
       <div class="absolute w-full h-full -z-20">
         <video autoplay loop muted playsinline class="object-cover w-full h-full">
-            <source src="Animation Background [AB50CD0].mp4" type="video/mp4">
+          <source src="Animation Background [AB50CD0].mp4" type="video/mp4">
         </video>
       </div>
       <div>
@@ -1179,7 +1179,7 @@
           ease: "power1.inOut",
         });
 
-        selectedDetailMenuIndex = -1
+        selectedDetailMenuIndex = 10
       } else if (selectedDetailMenuIndex === 1) {
         gsap.to(boxContainer, {
           y: 0,
@@ -1218,7 +1218,7 @@
           ease: "power1.inOut",
         });
 
-        selectedDetailMenuIndex = -1
+        selectedDetailMenuIndex = 10
       } else if (selectedDetailMenuIndex === 2) {
         gsap.to(boxContainer, {
           y: 0,
@@ -1257,7 +1257,7 @@
           ease: "power1.inOut",
         });
 
-        selectedDetailMenuIndex = -1
+        selectedDetailMenuIndex = 10
       } else if (selectedDetailMenuIndex === 3) {
         gsap.to(boxContainer, {
           y: 0,
@@ -1295,8 +1295,8 @@
           duration: 1,
           ease: "power1.inOut",
         });
-        selectedDetailMenuIndex = -1
-      } else if (selectedDetailMenuIndex === -1) {
+        selectedDetailMenuIndex = 10
+      } else if (selectedDetailMenuIndex === 10) {
         gsap.to(photo, {
           x: -500,
           duration: 1,
@@ -1366,30 +1366,34 @@
         prevEl: ".swiper-button-prev",
       },
     });
-    function scrollUpOrasi() {
-        const iframe = document.querySelector('.iframe-orasi');
-        if (iframe) {
-          iframe.contentWindow.scrollBy({
-            top: -100,  
-            behavior: 'smooth'
-          });
-        }
-      }
 
-      function scrollDownOrasi() {
-        const iframe = document.querySelector('.iframe-orasi');
-        if (iframe) {
-          iframe.contentWindow.scrollBy({
-            top: 100,  
-            behavior: 'smooth'
-          });
-        }
+    function scrollUpOrasi() {
+      const iframe = document.querySelector('.iframe-orasi');
+      if (iframe) {
+        iframe.contentWindow.scrollBy({
+          top: -100,
+          behavior: 'smooth'
+        });
       }
+    }
+
+    function scrollDownOrasi() {
+      const iframe = document.querySelector('.iframe-orasi');
+      if (iframe) {
+        iframe.contentWindow.scrollBy({
+          top: 100,
+          behavior: 'smooth'
+        });
+      }
+    }
   </script>
 
   <script type="module">
     import sanityClient from "https://cdn.jsdelivr.net/npm/@sanity/client/+esm";
-    import { getDocument, GlobalWorkerOptions  } from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs';
+    import {
+      getDocument,
+      GlobalWorkerOptions
+    } from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs';
     GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs';
 
     const client = sanityClient({
@@ -1461,7 +1465,7 @@
           const swiper = new Swiper('.multiple-slide-carousel', {
             loop: true,
             slidesPerView: 4,
-            initialSlide: 0, 
+            initialSlide: 0,
             pagination: true,
             spaceBetween: 80,
             navigation: {
@@ -1748,14 +1752,14 @@
                         <div class="flex justify-center mt-20">
                             <div class="-translate-y-[80px] relative w-[650px] h-[750px] border-[6px] border-white bg-white flex flex-col justify-center items-center -translate-y-10">
                               <div class="flex flex-col translate-x-[350px] translate-y-[25px]">
-                                <button class="prev-page text-black"><img src="scroll-icon.svg" class="mb-3 w-6 h-6 rotate-180"></button>
-                                <button class="next-page text-black"><img src="scroll-icon.svg" class="w-6 h-6" ></button>
+                                <button class="text-black prev-page"><img src="scroll-icon.svg" class="w-6 h-6 mb-3 rotate-180"></button>
+                                <button class="text-black next-page"><img src="scroll-icon.svg" class="w-6 h-6" ></button>
                               </div>
                               <canvas id="canvas-${modalIndex}" class="w-full h-full"></canvas>
                             </div>
                         </div>
                         <button class="z-50 text-center text-black  rounded-full cursor-pointer absolute bottom-[4.25rem] right-20">
-                          <img src="./images/back-icon.svg" class="w-8 transition-all btn-close-preview-orasi  h-auto" alt="Back Button">
+                          <img src="./images/back-icon.svg" class="w-8 h-auto transition-all btn-close-preview-orasi" alt="Back Button">
                         </button>
                     `;
 
@@ -1764,56 +1768,58 @@
               });
 
               function renderPDFToCanvas(pdfUrl, canvasId) {
-                  let pdfDoc = null;
-                  let pageNum = 1;
-                  const canvas = document.getElementById(canvasId);
-                  const ctx = canvas.getContext('2d');
+                let pdfDoc = null;
+                let pageNum = 1;
+                const canvas = document.getElementById(canvasId);
+                const ctx = canvas.getContext('2d');
 
-                  function renderPage(num) {
-                      pdfDoc.getPage(num).then(function(page) {
-                          const viewport = page.getViewport({scale: 1});
-                          canvas.height = viewport.height;
-                          canvas.width = viewport.width;
+                function renderPage(num) {
+                  pdfDoc.getPage(num).then(function(page) {
+                    const viewport = page.getViewport({
+                      scale: 1
+                    });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
 
-                          const renderContext = {
-                              canvasContext: ctx,
-                              viewport: viewport
-                          };
-                          page.render(renderContext);
-                      });
-                  }
-
-                  function queueRenderPage(num) {
-                      if (pdfDoc !== null) {
-                          renderPage(num);
-                      }
-                  }
-
-                  function onPrevPage() {
-                      if (pageNum <= 1) {
-                          return;
-                      }
-                      pageNum--;
-                      queueRenderPage(pageNum);
-                  }
-
-                  function onNextPage() {
-                      if (pageNum >= pdfDoc.numPages) {
-                          return;
-                      }
-                      pageNum++;
-                      queueRenderPage(pageNum);
-                  }
-
-                  canvas.parentElement.querySelector('.prev-page').addEventListener('click', onPrevPage);
-                  canvas.parentElement.querySelector('.next-page').addEventListener('click', onNextPage);
-
-                  getDocument(pdfUrl).promise.then((pdfDoc_) => {
-                      pdfDoc = pdfDoc_;
-                      renderPage(pageNum);
-                  }).catch(error => {
-                      console.error('Error loading PDF: ', error);
+                    const renderContext = {
+                      canvasContext: ctx,
+                      viewport: viewport
+                    };
+                    page.render(renderContext);
                   });
+                }
+
+                function queueRenderPage(num) {
+                  if (pdfDoc !== null) {
+                    renderPage(num);
+                  }
+                }
+
+                function onPrevPage() {
+                  if (pageNum <= 1) {
+                    return;
+                  }
+                  pageNum--;
+                  queueRenderPage(pageNum);
+                }
+
+                function onNextPage() {
+                  if (pageNum >= pdfDoc.numPages) {
+                    return;
+                  }
+                  pageNum++;
+                  queueRenderPage(pageNum);
+                }
+
+                canvas.parentElement.querySelector('.prev-page').addEventListener('click', onPrevPage);
+                canvas.parentElement.querySelector('.next-page').addEventListener('click', onNextPage);
+
+                getDocument(pdfUrl).promise.then((pdfDoc_) => {
+                  pdfDoc = pdfDoc_;
+                  renderPage(pageNum);
+                }).catch(error => {
+                  console.error('Error loading PDF: ', error);
+                });
               }
 
               // Tunggu sebentar untuk memastikan DOM selesai diupdate
@@ -1839,7 +1845,7 @@
               window.swiperPreviewOrasi.update();
             });
           });
-          
+
 
           // Event listener untuk tombol close modal
           document.querySelector(".modal-preview-orasi").addEventListener("click", (event) => {
@@ -1942,53 +1948,55 @@
               });
 
               function renderPDFToCanvas(pdfUrl, canvasId) {
-                  let pdfDoc = null;
-                  let pageNum = 1;
-                  const canvas = document.getElementById(canvasId);
-                  const ctx = canvas.getContext('2d');
+                let pdfDoc = null;
+                let pageNum = 1;
+                const canvas = document.getElementById(canvasId);
+                const ctx = canvas.getContext('2d');
 
-                  function renderPage(num) {
-                      pdfDoc.getPage(num).then(function(page) {
-                          const viewport = page.getViewport({scale: 1});
-                          canvas.height = viewport.height;
-                          canvas.width = viewport.width;
+                function renderPage(num) {
+                  pdfDoc.getPage(num).then(function(page) {
+                    const viewport = page.getViewport({
+                      scale: 1
+                    });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
 
-                          const renderContext = {
-                              canvasContext: ctx,
-                              viewport: viewport
-                          };
-                          page.render(renderContext);
-                      });
-                  }
-
-                  function queueRenderPage(num) {
-                      if (pdfDoc !== null) {
-                          renderPage(num);
-                      }
-                  }
-
-                  function onPrevPage() {
-                      if (pageNum <= 1) {
-                          return;
-                      }
-                      pageNum--;
-                      queueRenderPage(pageNum);
-                  }
-
-                  function onNextPage() {
-                      if (pageNum >= pdfDoc.numPages) {
-                          return;
-                      }
-                      pageNum++;
-                      queueRenderPage(pageNum);
-                  }
-
-                  getDocument(pdfUrl).promise.then((pdfDoc_) => {
-                      pdfDoc = pdfDoc_;
-                      renderPage(pageNum);
-                  }).catch(error => {
-                      console.error('Error loading PDF: ', error);
+                    const renderContext = {
+                      canvasContext: ctx,
+                      viewport: viewport
+                    };
+                    page.render(renderContext);
                   });
+                }
+
+                function queueRenderPage(num) {
+                  if (pdfDoc !== null) {
+                    renderPage(num);
+                  }
+                }
+
+                function onPrevPage() {
+                  if (pageNum <= 1) {
+                    return;
+                  }
+                  pageNum--;
+                  queueRenderPage(pageNum);
+                }
+
+                function onNextPage() {
+                  if (pageNum >= pdfDoc.numPages) {
+                    return;
+                  }
+                  pageNum++;
+                  queueRenderPage(pageNum);
+                }
+
+                getDocument(pdfUrl).promise.then((pdfDoc_) => {
+                  pdfDoc = pdfDoc_;
+                  renderPage(pageNum);
+                }).catch(error => {
+                  console.error('Error loading PDF: ', error);
+                });
               }
 
               // Tunggu sebentar untuk memastikan DOM selesai diupdate
